@@ -1,0 +1,55 @@
+<div class="container" *ngIf="currentUser; else loggedOut">
+    <header class="jumbotron">
+      <h3>
+        <strong>{{ currentUser.username }}</strong> Profile
+      </h3>
+    </header>
+    <p>
+      <strong>Token:</strong>
+      {{ currentUser.token.substring(0, 20) }} ...
+      {{ currentUser.token.substr(currentUser.token.length - 20) }}
+    </p>
+    <p>
+      <strong>Email:</strong>
+      {{ currentUser.email }}
+    </p>
+  </div>
+  
+  <ng-template #loggedOut>
+    Please login.
+  </ng-template>
+  <div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="title">libellé</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            required
+            [(ngModel)]="tache.libelle"
+            name="title"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input
+            class="form-control"
+            id="description"
+            required
+            [(ngModel)]="tache.description"
+            name="description"
+          />
+        </div>
+  
+        <button (click)="createTache()" class="btn btn-success">Submit</button>
+      </div>
+  
+      <div *ngIf="submitted">
+        <h4>Tutorial was submitted successfully!</h4>
+        <button class="btn btn-success" (click)="newTutorial()">Add</button>
+      </div>
+    </div>
+  </div>
