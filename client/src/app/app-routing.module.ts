@@ -3,16 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
+import { EspaceAdminComponent } from './espace-admin/espace-admin.component';
 import { EspaceUserComponent } from './espace-user/espace-user.component';
 
 const routes: Routes = [
-  
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'admin', component: AdminComponent },
-  { path: 'espace-user', component: EspaceUserComponent },
-  //{ path: '**', pathMatch: 'full', redirectTo: 'LoginComponent' },
+  { path: 'user', component: EspaceUserComponent },
+  { path: 'admin-login', component: AdminComponent },
+  { path: 'espace-admin', component: EspaceAdminComponent },
 ];
 
 @NgModule({

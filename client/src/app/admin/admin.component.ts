@@ -7,24 +7,11 @@ import { ActivityService } from '../services/activity.service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  activity : any;
+ 
 
   constructor(private activityService: ActivityService,) { }
 
   ngOnInit(): void {
-  }
-
-  
-  getAllActivity(){
-    this.activityService.GetAllActivity()
-    .subscribe((resultat) =>{
-      this.activity = resultat;
-      console.log(resultat);
-    })
-  }
-
-  getallUsers(){
-    
   }
 
 }
