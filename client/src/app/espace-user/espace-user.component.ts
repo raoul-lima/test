@@ -9,6 +9,10 @@ import { TokenService } from '../services/token.service';
   styleUrls: ['./espace-user.component.css']
 })
 export class EspaceUserComponent implements OnInit {
+  form: any = {
+    task: null
+  };
+
 currentUser: any;
 tache:any;
 submitted = false;
@@ -22,6 +26,10 @@ submitted = false;
     this.currentUser = this.token.getUser();
   }
 
+  onSubmit(){
+    const { task } = this.form;
+    console.log(task);
+  }
 
   createTache(): void {
     const data = {

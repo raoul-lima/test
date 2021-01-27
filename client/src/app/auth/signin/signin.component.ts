@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
-import { ActivityService } from '../services/activity.service';
-import { AuthService } from '../services/auth.service';
-import { TokenService } from '../services/token.service';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
-  selector: 'app-admin',
-  templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css']
+  selector: 'app-signin',
+  templateUrl: './signin.component.html',
+  styleUrls: ['./signin.component.css']
 })
-export class AdminComponent implements OnInit {
+export class SigninComponent implements OnInit {
   form: any = {
     username: null,
     password: null
@@ -23,13 +22,14 @@ export class AdminComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private token: TokenService
+    
   ) { }
 
   ngOnInit(): void {
   }
+
   onSubmit(){
     const { username, password } = this.form;
-
     console.log(username, password);
     this.authService.signIn(username, password).subscribe(
       (      data: { token: string; }) => {
@@ -53,6 +53,5 @@ export class AdminComponent implements OnInit {
   reloadPage() {
     window.location.reload();
   }
-
 
 }

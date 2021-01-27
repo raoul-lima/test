@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<!--<div class="col-md-12">
     <div class="card card-container">
       <img
         id="profile-img"
@@ -83,4 +83,98 @@
         Your registration is successful!
       </div>
     </div>
-  </div>
+  </div> -->
+
+  <div class="container h-100">
+    <div class="row h-100">
+        <div class="col-sm-10 col-md-8 col-lg-6 mx-auto d-table h-100">
+            <div class="d-table-cell align-middle">
+
+                <div class="text-center mt-4">
+                    <h1 class="h2">Creer votre compte</h1>
+                   
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <div class="m-sm-4">
+                          
+                            <form  *ngIf="!isSuccessful"
+                            name="form"
+                            (ngSubmit)="f.form.valid && onSubmit()"
+                            #f="ngForm"
+                            novalidate>
+                              <div class="form-group">
+                                <label>Username</label>
+                                <input type="text"
+                                name="username"
+                                [(ngModel)]="form.username"
+                                required
+                                minlength="3"
+                                maxlength="16"
+                                #username="ngModel" class="form-control form-control-lg" placeholder="Entrer votre pseudo">
+                                <div class="alert-danger" *ngIf="username.errors && f.submitted">
+                                  <div *ngIf="username.errors.required">Username is required</div>
+                                  <div *ngIf="username.errors.minlength">
+                                    Username must be at least 3 characters
+                                  </div>
+                                  <div *ngIf="username.errors.maxlength">
+                                    Username must be at most 16 characters
+                                  </div>
+                                </div>
+                              </div>
+                                <div class="form-group">
+                                    <label>Email</label>
+                                    <input 
+                                    type="email"
+                                    name="email"
+                                    [(ngModel)]="form.email"
+                                    required
+                                    email
+                                    #email="ngModel" class="form-control form-control-lg" placeholder="Entrer votre email">
+                                    <div class="alert-danger" *ngIf="email.errors && f.submitted">
+                                      <div *ngIf="email.errors.required">Email is required</div>
+                                      <div *ngIf="email.errors.email">
+                                        Email must be a valid email address
+                                      </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Mot de passe</label>
+                                    <input 
+                                    type="password"
+                                    name="password"
+                                    [(ngModel)]="form.password"
+                                    required
+                                    minlength="4"
+                                    #password="ngModel" class="form-control form-control-lg" placeholder="Entrer votre Mot de passe">
+                                    <div class="alert-danger" *ngIf="password.errors && f.submitted">
+                                      <div *ngIf="password.errors.required">Password is required</div>
+                                      <div *ngIf="password.errors.minlength">
+                                        Password must be at least 6 characters
+                                      </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="custom-control custom-checkbox align-items-center">
+                                        <input type="checkbox" class="custom-control-input" value="remember-me" name="remember-me" checked="">
+                                    </div>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <button type="submit" class="btn btn-primary btn-lg btn-block">Sign up</button>
+                                </div>
+                                <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+                                  Signup failed!<br />{{ errorMessage }}
+                                </div>
+                            </form>
+                            <div class="alert alert-success" *ngIf="isSuccessful">
+                              Your registration is successful!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

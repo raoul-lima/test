@@ -21,15 +21,15 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSubmit(): void {
+  onSubmit() {
     const { username, email, password } = this.form;
-
+    console.log(username, email, password);
     this.authService.signUp(username, email, password).subscribe(
       (      data: any) => {
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
-        this.router.navigateByUrl('login');
+        this.router.navigateByUrl('signin');
       },
       (      err: { error: { message: string; }; }) => {
         this.errorMessage = err.error.message;

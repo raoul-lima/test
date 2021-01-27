@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { InterceptorProviders } from './Intercepteur/interceptor';
 import { EspaceAdminComponent } from './espace-admin/espace-admin.component';
+import { SigninComponent } from './auth/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { EspaceAdminComponent } from './espace-admin/espace-admin.component';
     HeaderComponent,
     AdminComponent,
     EspaceUserComponent,
-    EspaceAdminComponent
+    EspaceAdminComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,

@@ -26,8 +26,7 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private token: TokenService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onSubmit(){
     const { username, password } = this.form;
