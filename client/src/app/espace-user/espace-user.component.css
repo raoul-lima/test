@@ -1,7 +1,4 @@
-.submit-form {
-    max-width: 400px;
-    margin: auto;
-  }
+
 /* page======================= */
 body{margin-top:20px;}
 
@@ -127,7 +124,7 @@ body{margin-top:20px;}
     padding: 15px;
     margin: 5px 0;
     border-radius: 0;
-    background: #f7f7f7
+    background: #e0e9ee;
 }
 
 .todo-list.only-active .todo-item.complete {
@@ -191,17 +188,6 @@ div.checker, div.radio, div.uploader {
     position: relative;
 }
 
-div.button, div.button *, div.checker, div.checker *, div.radio, div.radio *, div.selector, div.selector *, div.uploader, div.uploader * {
-    margin: 0;
-    padding: 0;
-}
-
-div.button, div.checker, div.radio, div.selector, div.uploader {
-    display: -moz-inline-box;
-    display: inline-block;
-    zoom: 1;
-    vertical-align: middle;
-}
 
 .card {
     padding: 25px;

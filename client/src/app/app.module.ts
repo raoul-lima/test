@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { InterceptorProviders } from './Intercepteur/interceptor';
 import { EspaceAdminComponent } from './espace-admin/espace-admin.component';
 import { SigninComponent } from './auth/signin/signin.component';
+import { EspaceActivitesComponent } from './espace-activites/espace-activites.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { SigninComponent } from './auth/signin/signin.component';
     AdminComponent,
     EspaceUserComponent,
     EspaceAdminComponent,
-    SigninComponent
+    SigninComponent,
+    EspaceActivitesComponent,
   ],
   imports: [
     BrowserModule,
