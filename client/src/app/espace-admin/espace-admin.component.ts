@@ -9,19 +9,33 @@ import { TachesService } from '../services/taches.service';
 })
 export class EspaceAdminComponent implements OnInit {
 
+  submitted = false;
   constructor(
     private activityService: ActivityService,
     private tacheService: TachesService) { }
 
   activity : any;
+  form: any = {
+  task: null
+  };
+
+  isFinished1:boolean=false;
+  isFinished2:boolean=false;
+  isFinished3:boolean=false;
+  isFinished4:boolean=false;
+
   ngOnInit(): void {
+    
   }
-  
+
+  onSubmit(){
+   
+  }
   
   getAllActivity(){
     this.activityService.GetAllActivity()
     .subscribe((resultat) =>{
-      console.log(resultat);
+      console.log(resultat,);
     })
   }
   getAllTache(){
@@ -32,6 +46,15 @@ export class EspaceAdminComponent implements OnInit {
 
   getallUsers(){
     
+  }
+  supprimer(){
+    
+  }
+  onChange(){
+    console.log(this.isFinished1)
+  }
+  editer(){
+
   }
 
 }

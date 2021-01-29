@@ -24,39 +24,37 @@
                 </form>
                 <ul class="nav nav-pills todo-nav">
                     <li role="presentation" class="nav-item all-task active"><a href="#" class="nav-link">All</a></li>
-                    <li role="presentation" class="nav-item active-task"><a href="#" class="nav-link">Active</a></li>
-                    <li role="presentation" class="nav-item completed-task"><a href="#" class="nav-link">Completed</a></li>
                 </ul>
                 <div class="todo-list">
                   <div class="todo-item">
                     <div style="display: inline;margin-left: 8px;" class="checker"><span><input type="checkbox"></span></div>
                     <span style="display: inline; margin-left: 5px;" class="">Error solve in HTML template</span>
-                    <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
+                    <a href="" class="float-right remove-todo-item"><i class="icon-close"></i></a>
                     <div style="float:right;"><a href="#"><i class="fa fa-trash"></i></a></div>
                     <div style="float:right;padding-right: 05px;"><a href="#"><i class="fa fa-edit"></i></a></div>
                   </div>
                   <div class="todo-item">
                     <div style="display: inline;margin-left: 8px;" class="checker"><span><input type="checkbox"></span></div>
                     <span style="display: inline; margin-left: 5px;" class="">Error solve in HTML template</span>
-                    <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
+                    <a href="" class="float-right remove-todo-item"><i class="icon-close"></i></a>
                     <div style="float:right;"><a href="#"><i class="fa fa-trash"></i></a></div>
                     <div style="float:right;padding-right: 05px;"><a href="#"><i class="fa fa-edit"></i></a></div>
                   </div>
                   <div class="todo-item">
                     <div style="display: inline;margin-left: 8px;" class="checker"><span><input type="checkbox"></span></div>
                     <span style="display: inline; margin-left: 5px;" class="">Error solve in HTML template</span>
-                    <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
+                    <a href="" class="float-right remove-todo-item"><i class="icon-close"></i></a>
                     <div style="float:right;"><a href="#"><i class="fa fa-trash"></i></a></div>
                     <div style="float:right;padding-right: 05px;"><a href="#"><i class="fa fa-edit"></i></a></div>
                   </div>
         
-                    <div class="todo-item" style="text-decoration : line-through;">
-                      <div style="display: inline;margin-left: 8px;" class="checker"><span><input type="checkbox"></span></div>
-                      <span style="display: inline; margin-left: 5px;" class="">Error solve in HTML template</span>
-                      <a href="javascript:void(0);" class="float-right remove-todo-item"><i class="icon-close"></i></a>
-                      <div style="float:right;"><a href="#"><i class="fa fa-trash"></i></a></div>
-                      <div style="float:right;padding-right: 05px;"><a href="#"><i class="fa fa-edit"></i></a></div>
-                    </div>
+                  <div class="todo-item">
+                    <div style="display: inline;margin-left: 8px;" class="checker"><span><input type="checkbox" name="isFinished4" [(ngModel)]="isFinished" (change)="onChange()"></span></div>
+                    <span style="display: inline; margin-left: 5px;" [ngStyle]="{'text-decoration':isFinished?'line-through':'none'}">Error solve in HTML template</span>
+                    <a class="float-right remove-todo-item"><i class="icon-close"></i></a>
+                    <div style="float:right;"><a href="#" class="btn btn-sm btn-danger" (click)="supprimer()"><i class="fa fa-trash"></i></a></div>
+                    <div style="float:right;padding-right: 05px;"><a class="btn btn-sm btn-success" (click)="editer()"><i class="fa fa-edit"></i></a></div>
+                  </div>
                 </div>
    
           </div>

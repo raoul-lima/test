@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 //import { Taches } from '../models/taches';
 import { TachesService } from '../services/taches.service';
-import { TokenService } from '../services/token.service';
 
 @Component({
   selector: 'app-espace-user',
@@ -13,17 +12,16 @@ export class EspaceUserComponent implements OnInit {
     task: null
   };
 
-currentUser: any;
 tache:any;
 submitted = false;
+isFinished:boolean=false;
 
   constructor(
-    private token: TokenService,
-    private tacheService: TachesService
+    private tacheService: TachesService,
     ) { }
 
   ngOnInit(): void {
-    this.currentUser = this.token.getUser();
+    
   }
 
   onSubmit(){
@@ -56,9 +54,8 @@ submitted = false;
       published: false
     };
   }
+  supprimer(){};
+  editer(){};
+  onChange(){}
 
-  logout(): void {
-    this.token.signOut();
-    window.location.reload();
-  }
 }
