@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivityService } from '../services/activity.service';
-import { TachesService } from '../services/taches.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-espace-admin',
@@ -12,8 +12,9 @@ export class EspaceAdminComponent implements OnInit {
   submitted = false;
   constructor(
     private activityService: ActivityService,
-    private tacheService: TachesService) { }
+    private userService: UserService) { }
 
+  users:any;
   activity : any;
   form: any = {
   task: null
@@ -38,17 +39,15 @@ export class EspaceAdminComponent implements OnInit {
       console.log(resultat,);
     })
   }
-  getAllTache(){
-    this.tacheService.getAllTache().subscribe(data =>{
-      console.log(data);
+
+  getUsers(){
+    this.userService.getUserBoard()
+    .subscribe((resultat)=>{
+      this.users = resultat;
     })
   }
-
-  getallUsers(){
-    
-  }
-  supprimer(){
-    
+  suppActivity(/*id*/){
+    //this.activityService.deleteActivity(id);
   }
   onChange(){
     console.log(this.isFinished1)

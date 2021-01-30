@@ -15,6 +15,10 @@ export class EspaceUserComponent implements OnInit {
 tache:any;
 submitted = false;
 isFinished:boolean=false;
+isFinished1:boolean=false;
+  isFinished2:boolean=false;
+  isFinished3:boolean=false;
+  isFinished4:boolean=false;
 
   constructor(
     private tacheService: TachesService,
@@ -30,12 +34,9 @@ isFinished:boolean=false;
   }
 
   createTache(): void {
-    const data = {
-      title: this.tache.libelle,
-      description: this.tache.description
-    };
+    const { task } = this.form;
 
-    this.tacheService.createTache(data)
+    this.tacheService.createTache(task)
       .subscribe(
         response => {
           console.log(response);
@@ -46,16 +47,12 @@ isFinished:boolean=false;
         });
   }
 
-  newTutorial(): void {
-    this.submitted = false;
-    this.tache = {
-      title: '',
-      description: '',
-      published: false
-    };
-  }
-  supprimer(){};
-  editer(){};
+  supprimer(/*id:any*/){
+    //this.tacheService.deleteTache(/*id:any*/);
+  };
+  editer(/*id:number, task:any*/){
+    //this.tacheService.updateTache(id,task);
+  };
   onChange(){}
 
 }
