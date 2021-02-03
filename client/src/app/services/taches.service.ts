@@ -1,9 +1,12 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Taches } from '../models/taches';
 
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 const API_URL = 'http://localhost:4040/api/taches';
 @Injectable({
   providedIn: 'root'
@@ -14,6 +17,11 @@ export class TachesService {
 
   createTache(data: any): Observable<any> {
     return this.http.post(API_URL, data);
+  }
+  create(data:string): Observable<any>{
+    return this.http.post(API_URL+'create',{
+      data
+    }, httpOptions)
   }
 
   getoneTache(id: any): Observable<any> {

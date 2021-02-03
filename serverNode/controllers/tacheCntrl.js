@@ -19,13 +19,11 @@ module.exports = {
 
         //parametres
         var libelle = req.body.libelle;
-        var descrips = req.body.description;
 
         const newTache = {
             idUser: 1,
             idActivite: 1,
             label: libelle,
-            description: descrips,
             isStarted:0,
             isFinished: 0,
         };

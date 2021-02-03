@@ -23,7 +23,6 @@ module.exports = (sequelize, DataTypes) => {
     idUser: DataTypes.INTEGER,
     idActivite: DataTypes.INTEGER,
     label: DataTypes.STRING,
-    description: DataTypes.TEXT,
     isStarted: DataTypes.BOOLEAN,
     isFinished: DataTypes.BOOLEAN
   }, {

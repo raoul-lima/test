@@ -56,4 +56,8 @@ export class EspaceAdminComponent implements OnInit {
 
   }
 
+  supprimer(){
+    
+  }
+
 }
